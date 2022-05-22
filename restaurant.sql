@@ -125,3 +125,63 @@ INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (10,14,20);
 
 -- Jus de coco
 INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (11,16,1);
+
+
+CREATE TABLE emplacement(
+	id SERIAL PRIMARY KEY NOT NULL,
+	numero VARCHAR(30)
+);
+
+INSERT INTO emplacement(numero) VALUES ('Table 1');
+INSERT INTO emplacement(numero) VALUES ('Table 2');
+INSERT INTO emplacement(numero) VALUES ('Table 3');
+
+CREATE TABLE serveur(
+	id SERIAL PRIMARY KEY NOT NULL,
+	nom VARCHAR(60)
+);
+
+INSERT INTO serveur(nom)  VALUES('Jaheem');
+INSERT INTO serveur(nom)  VALUES('Tommy');
+INSERT INTO serveur(nom)  VALUES('Mahandry');
+INSERT INTO serveur(nom)  VALUES('Angela');
+
+CREATE TABLE commande(
+	id SERIAL PRIMARY KEY NOT NULL,
+	idEmplacement INT,
+	dateCommande DATE,
+	montant DECIMAL,
+	etat INT,
+	FOREIGN KEY (idEmplacement) REFERENCES emplacement(id)
+);
+
+-- etat - 0 commandee
+-- etat - 1 fabriquee
+-- etat - 2 livree
+
+CREATE TABLE detailscommande(
+	id SERIAL PRIMARY KEY NOT NULL,
+	idCommande INT,
+	idProduit INT,
+	quantite DECIMAL,
+	FOREIGN KEY (idCommande) REFERENCES commande(id),
+	FOREIGN KEY (idproduit) REFERENCES produit(id)
+);
+
+CREATE TABLE moyenPaiement(
+	id SERIAL PRIMARY KEY NOT NULL,
+	nom VARCHAR(40)
+);
+
+INSERT INTO moyenPaiement (nom) VALUES ('Cheque');
+INSERT INTO moyenPaiement (nom) VALUES ('Espece');
+
+CREATE TABLE paiement(
+	id SERIAL PRIMARY KEY NOT NULL,
+	idCommande INT,
+	idMoyenPaiement INT,
+	montant DECIMAL,
+	datepaiement DATE,
+	FOREIGN KEY (idCommande) REFERENCES commande(id),
+	FOREIGN KEY (idMoyenPaiement) REFERENCES moyenPaiement(id)
+);
