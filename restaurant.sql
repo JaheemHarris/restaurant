@@ -54,8 +54,8 @@ CREATE TABLE produit(
 
 INSERT INTO produit (idcategorie,nom) VALUES (1,'Riz cantonais');	-- prd 1 --
 INSERT INTO produit (idcategorie,nom) VALUES (1,'Pizza crevette');	-- prd 2 --
-INSERT INTO produit (idcategorie,nom) VALUES (1,'Henakisoa sy carotte');	-- prd 3 --
-INSERT INTO produit (idcategorie,nom) VALUES (1,'Hena''omby ritra');		-- prd 4 --
+INSERT INTO produit (idcategorie,nom) VALUES (1,'Henakisoa sy caroty');	-- prd 3 --
+INSERT INTO produit (idcategorie,nom) VALUES (1,'Henomby ritra');		-- prd 4 --
 INSERT INTO produit (idcategorie,nom) VALUES (1,'Poulet sauté');			-- prd 5 --
 
 INSERT INTO produit (idcategorie,nom) VALUES (2,'Salade de fruit');	-- prd 6 --
@@ -77,4 +77,51 @@ CREATE TABLE detailsproduit(
 );
 
 
--- INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES ();
+-- Riz cantonais
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (1,1,50);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (1,3,1);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (1,8,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (1,12,100);
+
+-- Pizza crevette
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (2,9,200);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (2,7,100);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (2,4,50);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (2,5,20);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (2,6,20);
+
+-- Henakisoa sy caroty
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (3,11,100);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (3,8,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (3,1,20);
+
+-- Henomby ritra
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (4,8,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (4,10,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (4,5,20);
+
+-- Poulet sauté
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (5,8,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (5,12,150);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (5,5,20);
+
+-- Salade de fruit
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (6,13,2);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (6,14,50);
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (6,17,2);
+
+-- Tokon'akondro
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (7,17,5);
+
+-- Yaourt maison
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (8,18,150);
+
+-- Jus d'orange
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (9,13,2);
+
+
+-- Jus de raisin
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (10,14,20);
+
+-- Jus de coco
+INSERT INTO detailsproduit(idproduit,idingredient,quantite) VALUES (11,16,1);
